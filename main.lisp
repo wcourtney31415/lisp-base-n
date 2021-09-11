@@ -39,8 +39,8 @@
 
 ( defun convertNumberRecursive 
     ( base myNumber generatedList accList ) 
-    ( if 
-        ( = myNumber 0 ) 
+    ( let ( ( targetListLength (length generatedList) ) ) (if 
+        ( not generatedList ) 
         ( ret accList ) 
         ( let* 
             ( 
@@ -55,13 +55,13 @@
             ( convertNumberRecursive base nextnum 
                 ( cdr generatedList ) 
                 ( append accList 
-                    ( List answer ) ) ) ) ) )
+                    ( List answer ) ) ) )) ) )
 myNumber
 ( defun convertNumber ( base myNumber ) ( convertNumberRecursive base myNumber 
         ( generateList base myNumber ) 
-        ( ) ) )
+        () ) )
 
 ( print 
     ( convertNumber base myNumber ) )
 
-( print (generateList 3 123) )
+;; ( print (cdr () ) )
