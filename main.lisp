@@ -1,4 +1,8 @@
-( defun ret (x) (reverse (reverse x)) )
+
+( defun ret 
+    ( x ) 
+    ( reverse 
+        ( reverse x ) ) )
 
 ( print "What base?" )
 ( setq base 
@@ -36,19 +40,24 @@ Nil number))
     ( base myNumber generatedList accList ) 
     ( if 
         ( = myNumber 0 ) 
-        ( ret  accList ) 
+        ( ret accList ) 
         ( let* 
             ( 
                 ( answer 
                     ( floor 
                         ( / myNumber 
-                            ( first  generatedList ) ) ) ) 
+                            ( first generatedList ) ) ) ) 
                 ( nextNum 
                     ( - myNumber 
                         ( * answer 
-                            ( first  generatedList ) ) ) ) ) 
-            ( convertNumberRecursive base nextnum (cdr generatedList) 
-                ( append accList (List answer) ) ) ) ) )
+                            ( first generatedList ) ) ) ) ) 
+            ( convertNumberRecursive base nextnum 
+                ( cdr generatedList ) 
+                ( append accList 
+                    ( List answer ) ) ) ) ) )
 
 
-( print ( convertNumberRecursive base myNumber (generateList base myNumber) () ) )
+( print 
+    ( convertNumberRecursive base myNumber 
+        ( generateList base myNumber ) 
+        ( ) ) )
