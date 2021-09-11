@@ -1,4 +1,3 @@
-
 ( defun ret 
     ( x ) 
     ( reverse 
@@ -35,33 +34,41 @@
 ( defun generateList 
     ( base number ) 
     ( generateListRecursive base 0 
-        Nil number))
+Nilnumber))
+
 
 ( defun convertNumberRecursive 
     ( base myNumber generatedList accList ) 
-    ( let ( ( targetListLength (length generatedList) ) ) (if 
-        ( not generatedList ) 
-        ( ret accList ) 
-        ( let* 
-            ( 
-                ( answer 
-                    ( floor 
-                        ( / myNumber 
-                            ( first generatedList ) ) ) ) 
-                ( nextNum 
-                    ( - myNumber 
-                        ( * answer 
-                            ( first generatedList ) ) ) ) ) 
-            ( convertNumberRecursive base nextnum 
-                ( cdr generatedList ) 
-                ( append accList 
-                    ( List answer ) ) ) )) ) )
+    ( let 
+        ( 
+            ( targetListLength 
+                ( length generatedList ) ) ) 
+        ( if 
+            ( not generatedList ) 
+            ( ret accList ) 
+            ( let* 
+                ( 
+                    ( answer 
+                        ( floor 
+                            ( / myNumber 
+                                ( first generatedList ) ) ) ) 
+                    ( nextNum 
+                        ( - myNumber 
+                            ( * answer 
+                                ( first generatedList ) ) ) ) ) 
+                ( convertNumberRecursive base nextnum 
+                    ( cdr generatedList ) 
+                    ( append accList 
+                        ( List answer ) ) ) ) ) ) )
+
+
 myNumber
-( defun convertNumber ( base myNumber ) ( convertNumberRecursive base myNumber 
+( defun convertNumber 
+    ( base myNumber ) 
+    ( convertNumberRecursive base myNumber 
         ( generateList base myNumber ) 
-        () ) )
+        ( ) ) )
+
 
 ( print 
     ( convertNumber base myNumber ) )
-
-;; ( print (cdr () ) )
