@@ -1,7 +1,4 @@
-( defun ret 
-    ( x ) 
-    ( reverse 
-        ( reverse x ) ) )
+
 
 
 ( print "What base?" )
@@ -18,14 +15,14 @@
     ( base exponent amyList myNumber ) 
     ( if 
         ( = myNumber 0 ) 
-        ( ret amyList ) 
+amyList
         ( let 
             ( 
                 ( j 
                     ( expt base exponent ) ) ) 
             ( if 
                 ( > j myNumber ) 
-                ( ret amyList ) 
+amyList
                 ( generateListRecursive base 
                     ( + exponent 1 ) 
                     ( cons j amyList ) myNumber ) ) ) ) )
@@ -34,7 +31,7 @@
 ( defun generateList 
     ( base number ) 
     ( generateListRecursive base 0 
-Nilnumber))
+ Nil number))
 
 
 ( defun convertNumberRecursive 
@@ -45,7 +42,7 @@ Nilnumber))
                 ( length generatedList ) ) ) 
         ( if 
             ( not generatedList ) 
-            ( ret accList ) 
+accList
             ( let* 
                 ( 
                     ( answer 
