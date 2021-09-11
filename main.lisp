@@ -56,8 +56,8 @@
                 ( cdr generatedList ) 
                 ( append accList 
                     ( List answer ) ) ) ) ) )
-
-( defun convertNumber ( base myNumber ) ( convertNumberRecursive base myNumber 
+myNumber
+( defun convertNumber ( base  ) ( convertNumberRecursive base myNumber 
         ( generateList base myNumber ) 
         ( ) ) )
 
