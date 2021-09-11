@@ -1,6 +1,3 @@
-
-
-
 ( print "What base?" )
 ( setq base 
     ( read ) )
