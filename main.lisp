@@ -48,7 +48,7 @@ Nil number))
                         ( * answer 
                             ( first  generatedList ) ) ) ) ) 
             ( convertNumberRecursive base nextnum (cdr generatedList) 
-                ( cons answer  accList ) ) ) ) )
+                ( append accList (List answer) ) ) ) ) )
 
 
 ( print ( convertNumberRecursive base myNumber (generateList base myNumber) () ) )
