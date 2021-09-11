@@ -4,12 +4,16 @@
     ( reverse 
         ( reverse x ) ) )
 
+
 ( print "What base?" )
 ( setq base 
     ( read ) )
+
+
 ( print "What number?" )
 ( setq myNumber 
     ( read ) )
+
 
 ( defun generateListRecursive 
     ( base exponent amyList myNumber ) 
@@ -26,9 +30,6 @@
                 ( generateListRecursive base 
                     ( + exponent 1 ) 
                     ( cons j amyList ) myNumber ) ) ) ) )
-
-
-
 
 
 ( defun generateList 
