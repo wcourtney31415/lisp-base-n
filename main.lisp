@@ -34,7 +34,7 @@
 ( defun generateList 
     ( base number ) 
     ( generateListRecursive base 0 
-Nil number))
+        Nil number))
 
 ( defun convertNumberRecursive 
     ( base myNumber generatedList accList ) 
