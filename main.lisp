@@ -57,8 +57,9 @@
                 ( append accList 
                     ( List answer ) ) ) ) ) )
 
-
-( print 
-    ( convertNumberRecursive base myNumber 
+( defun convertNumber ( base myNumber ) ( convertNumberRecursive base myNumber 
         ( generateList base myNumber ) 
         ( ) ) )
+
+( print 
+    ( convertNumber base myNumber ) )
