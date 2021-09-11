@@ -1,3 +1,4 @@
+
 ( print "What base?" )
 ( setq base 
     ( read ) )
@@ -9,51 +10,48 @@
 
 
 ( defun generateListRecursive 
-    ( base exponent amyList myNumber ) 
+    ( base exponent myList myNumber ) 
     ( if 
         ( = myNumber 0 ) 
-amyList
+myList
         ( let 
             ( 
                 ( j 
                     ( expt base exponent ) ) ) 
             ( if 
                 ( > j myNumber ) 
-amyList
+myList
                 ( generateListRecursive base 
                     ( + exponent 1 ) 
-                    ( cons j amyList ) myNumber ) ) ) ) )
+                    ( cons j myList ) myNumber ) ) ) ) )
 
 
 ( defun generateList 
     ( base number ) 
     ( generateListRecursive base 0 
- Nil number))
+Nil number))
 
 
 ( defun convertNumberRecursive 
     ( base myNumber generatedList accList ) 
-    ( let 
-        ( 
-            ( targetListLength 
-                ( length generatedList ) ) ) 
-        ( if 
-            ( not generatedList ) 
+    ( 
+if
+        ( not generatedList ) 
 accList
-            ( let* 
-                ( 
-                    ( answer 
-                        ( floor 
-                            ( / myNumber 
-                                ( first generatedList ) ) ) ) 
-                    ( nextNum 
-                        ( - myNumber 
-                            ( * answer 
-                                ( first generatedList ) ) ) ) ) 
-                ( convertNumberRecursive base nextnum 
-                    ( cdr generatedList ) 
-                    ( append accList 
-                        ( List answer ) ) ) ) ) ) )
+        ( let* 
+            ( 
+                ( answer 
+                    ( floor 
+                        ( / myNumber 
+                            ( first generatedList ) ) ) ) 
+                ( nextNum 
+                    ( - myNumber 
+                        ( * answer 
+                            ( first generatedList ) ) ) ) ) 
+            ( convertNumberRecursive base nextnum 
+                ( cdr generatedList ) 
+                ( append accList 
+                    ( List answer ) ) ) ) ) ) 
 
 
 myNumber
