@@ -62,5 +62,7 @@ myNumber
         ( ) ) )
 
 
-( print 
-    ( convertNumber base myNumber ) )
+(defun concatList( list )
+  (format nil "~{~a~}" list))
+
+(print (parse-integer ( concatList ( convertNumber base myNumber ) )))

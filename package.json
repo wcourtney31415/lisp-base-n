@@ -1,0 +1,23 @@
+{
+  "name": "lisp-number-systems",
+  "version": "1.0.0",
+  "description": "Convert from base 10 to base n.",
+  "main": "main.lisp",
+  "scripts": {
+    "start": "clear; clisp main.lisp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wcourtney31415/lisp-base-n.git"
+  },
+  "keywords": [
+    "Base",
+    "Conversion"
+  ],
+  "author": "Wesley Courtney",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wcourtney31415/lisp-base-n/issues"
+  },
+  "homepage": "https://github.com/wcourtney31415/lisp-base-n#readme"
+}
